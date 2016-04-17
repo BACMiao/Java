@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+       ">
+    <context:annotation-config/>
+    <!--<aop:aspectj-autoproxy/>-->
+    <bean id="userDAO" class="com.impl.UserDAOImpl"></bean>
+    <!--<bean id="u2" class="com.impl.UserDAOImpl"></bean>-->
+    <!--<bean id="u3" class="com.impl.UserDAOImpl2"></bean>-->
+
+    <bean id="userService" class="com.service.UserService">
+        <property name="userDAO" ref="userDAO" />
+    </bean>
+
+    <!--<bean id="u4" class="com.aop.LogInterceptor"></bean>-->
+
+    <!--<bean name="userDAO" class="com.impl.UserDAOImpl">-->
+        <!--<property name="lists">-->
+            <!--<list>-->
+                <!--<value>1</value>-->
+                <!--<value>2</value>-->
+            <!--</list>-->
+        <!--</property>-->
+
+        <!--<property name="maps">-->
+            <!--<map>-->
+                <!--<entry key="1" value="1"></entry>-->
+                <!--<entry key="2" value="2"></entry>-->
+                <!--<entry key="3" value="3"></entry>-->
+            <!--</map>-->
+        <!--</property>-->
+
+        <!--<property name="sets">-->
+            <!--<set>-->
+                <!--<value>1</value>-->
+                <!--<value>2</value>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+</beans>
